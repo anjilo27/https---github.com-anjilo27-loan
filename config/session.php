@@ -1,5 +1,8 @@
 <?php include ('connect.php');
- session_start(); 
+ if(!isset($_SESSION)) 
+ { 
+     session_start(); 
+ } 
 //Check whether the session variable SESS_MEMBER_ID is present or not
 if (!isset($_SESSION['tid']) || (trim($_SESSION['tid']) == '')) { ?>
 <script>
